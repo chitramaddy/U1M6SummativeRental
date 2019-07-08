@@ -52,7 +52,6 @@ public class ItemDaoJdbcTemplateImpl implements ItemDao {
         jdbcTemplate.update(INSERT_ITEM_SQL,
                 item.getName(),
                 item.getDescription(),
-                item.getDescription(),
                 item.getDailyRate());
         int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
         item.setItemId(id);

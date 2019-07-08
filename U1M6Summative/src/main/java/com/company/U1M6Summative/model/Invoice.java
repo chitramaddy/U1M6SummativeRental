@@ -1,19 +1,20 @@
-package com.company.U1M6Summative.viewmodel;
+package com.company.U1M6Summative.model;
 
-import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.viewmodel.InvoiceViewModel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class InvoiceViewModel {
+public class Invoice {
 
     private int id;
-    private Customer customer;
+    private int customerId;
     private LocalDate orderDate;
     private LocalDate pickupDate;
     private LocalDate returnDate;
     private BigDecimal lateFee;
+
 
     public int getId() {
         return id;
@@ -23,12 +24,12 @@ public class InvoiceViewModel {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public LocalDate getOrderDate() {
@@ -67,9 +68,9 @@ public class InvoiceViewModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        InvoiceViewModel that = (InvoiceViewModel) o;
+        Invoice that = (Invoice) o;
         return getId() == that.getId() &&
-                Objects.equals(getCustomer(),that.getCustomer()) &&
+                getCustomerId() == that.getCustomerId() &&
                 Objects.equals(getOrderDate(), that.getOrderDate()) &&
                 Objects.equals(getPickupDate(), that.getPickupDate()) &&
                 Objects.equals(getReturnDate(), that.getReturnDate()) &&
@@ -78,7 +79,6 @@ public class InvoiceViewModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCustomer(), getOrderDate(), getPickupDate(), getReturnDate(),getLateFee());
+        return Objects.hash(getId(), getCustomerId(), getOrderDate(), getPickupDate(), getReturnDate(),getLateFee());
     }
-
 }

@@ -68,7 +68,7 @@ public class ServiceLayer {
         return null;
     }
 
-    @Transactional
+
     public ItemViewModel updateItem(ItemViewModel itemViewModel){
         return null;
     }

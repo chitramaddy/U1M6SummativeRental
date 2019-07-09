@@ -38,7 +38,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
 
         List<Customer> cList = CustomerDao.getAllCustomers();
         cList.stream()
-                .forEach(customer -> CustomerDao.deleteCustomer(customer.getCustomer_id()));
+                .forEach(customer -> CustomerDao.deleteCustomer(customer.getCustomerId()));
 
         List<Invoice> inList = InvoiceDao.getAllInvoices();
         inList.stream()
@@ -72,11 +72,11 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         // Need to fix Customer yet
 
         Customer customer = new Customer();
-        customer.setFirst_Name("Mark");
-        customer.setLast_Name("Bob");
+        customer.setFirstName("Mark");
+        customer.setLastName("Bob");
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
-        customer.setPhone(912-555-5555);
+        customer.setPhone("912-555-5555");
         customer = CustomerDao.addCustomer(customer);
 
 
@@ -89,7 +89,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
         invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19));
+        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
         invoice.setLateFee(new BigDecimal(12.25));
         invoice = InvoiceDao.addInvoice(invoice);
 
@@ -120,11 +120,11 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
     public void getAllInvoiceItems() {
 
         Customer customer = new Customer();
-        customer.setFirst_Name("Mark");
-        customer.setLast_Name("Bob");
+        customer.setFirstName("Mark");
+        customer.setLastName("Bob");
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
-        customer.setPhone(912-555-5555);
+        customer.setPhone("912-555-5555");
         CustomerDao.addCustomer(customer);
 
         Item item = new Item();
@@ -137,7 +137,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
         invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19));
+        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
         invoice.setLateFee(new BigDecimal(12.25));
         InvoiceDao.addInvoice(invoice);
 
@@ -159,11 +159,11 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
     @Test
     public void updateInvoiceItem() {
         Customer customer = new Customer();
-        customer.setFirst_Name("Mark");
-        customer.setLast_Name("Bob");
+        customer.setFirstName("Mark");
+        customer.setLastName("Bob");
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
-        customer.setPhone(912-555-5555);
+        customer.setPhone("912-555-5555");
         CustomerDao.addCustomer(customer);
 
         Item item = new Item();
@@ -175,7 +175,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
         invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19));
+        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
         invoice.setLateFee(new BigDecimal(12.25));
         InvoiceDao.addInvoice(invoice);
 

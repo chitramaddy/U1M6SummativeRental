@@ -44,7 +44,11 @@ public class InvoiceDaoTest {
 
         List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
         for(InvoiceItem invoiceItem : invoiceItemList){
+<<<<<<< HEAD
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_item_id());
+=======
             invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_id());
+>>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
         }
 
         List<Item> itemList = itemDao.getAllItems();
@@ -63,7 +67,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 //
 //        Item item = new Item();
 //        item.setName("itemname");
@@ -109,7 +113,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Invoice invoice = new Invoice();
 
@@ -147,7 +151,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Invoice invoice = new Invoice();
 
@@ -159,8 +163,12 @@ public class InvoiceDaoTest {
 
         invoice = invoiceDao.addInvoice(invoice);
 
+<<<<<<< HEAD
+        invoice.setOrderDate(LocalDate.of(2019,02,24));
+=======
         invoice.setOrderDate(LocalDate.of(2019,02,24))
         ;
+>>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
         invoice.setPickupDate(LocalDate.of(2019,02,25));
         invoice.setReturnDate(LocalDate.of(2019,02,26));
 

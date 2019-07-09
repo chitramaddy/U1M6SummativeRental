@@ -2,6 +2,13 @@ package com.company.U1M6Summative.service;
 
 import com.company.U1M6Summative.dao.*;
 <<<<<<< HEAD
+import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.viewmodel.CustomerViewModel;
+import org.junit.Before;
+import org.junit.Test;
+
+=======
+<<<<<<< HEAD
 import com.company.U1M6Summative.model.Item;
 =======
 import com.company.U1M6Summative.model.Customer;
@@ -21,11 +28,15 @@ import java.awt.print.Book;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 >>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
+>>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 =======
@@ -53,18 +64,73 @@ public class ServiceLayerTest {
 
     @Test
     public void saveCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        CustomerViewModel cvmFromService = serviceLayer.findCustomer(customer.getCustomerId());
+
+        assertEquals(cvmFromService, customerViewModel);
     }
 
     @Test
     public void findCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        CustomerViewModel cvmFromService = serviceLayer.findCustomer(customer.getCustomerId());
+
+        assertEquals(cvmFromService, customerViewModel);
+
     }
 
     @Test
     public void findAllCustomer() {
+        List<CustomerViewModel> cvmFromService = serviceLayer.findAllCustomers();
+
+        assertEquals(1, cvmFromService.size());
     }
 
     @Test
     public void updateCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        customerViewModel.setCompany("The Awesomest Company");
+
+        serviceLayer.updateCustomer(customerViewModel);
+
+        CustomerViewModel customerViewModel1 = serviceLayer.findCustomer(customerViewModel.getCustomerId());
+
+        assertEquals(customerViewModel, customerViewModel1);
+
+
     }
 
     @Test
@@ -329,6 +395,27 @@ public class ServiceLayerTest {
     private void setUpCustomerDaoMock(){
         customerDao = mock(CustomerDaoJdbcTemplateImpl.class);
 
+        Customer customer = new Customer();
+        customer.setCustomerId(1);
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        Customer customer2 = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        List<Customer> customerList = new ArrayList<Customer>();
+        customerList.add(customer);
+
+        doReturn(customer).when(customerDao).addCustomer(customer2);
+        doReturn(customer).when(customerDao).getCustomerById(1);
+        doReturn(customer).when(customerDao).getAllCustomers();
     }
 
     private void setUpInvoiceDaoMock(){

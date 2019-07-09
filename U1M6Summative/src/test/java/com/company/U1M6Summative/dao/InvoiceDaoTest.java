@@ -2,6 +2,8 @@ package com.company.U1M6Summative.dao;
 
 import com.company.U1M6Summative.model.Customer;
 import com.company.U1M6Summative.model.Invoice;
+import com.company.U1M6Summative.model.InvoiceItem;
+import com.company.U1M6Summative.model.Item;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +34,7 @@ public class InvoiceDaoTest {
 
         List<Customer> customerList = customerDao.getAllCustomers();
         for(Customer customer : customerList){
-            customerDao.deleteCustomer(customer.getId());
+            customerDao.deleteCustomer(customer.getCustomerId());
         }
 
         List<Invoice> invoiceList = invoiceDao.getAllInvoices();
@@ -42,12 +44,12 @@ public class InvoiceDaoTest {
 
         List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
         for(InvoiceItem invoiceItem : invoiceItemList){
-            invoiceItemDao.deleteInvoiceItem(invoiceItem.getId());
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_item_id());
         }
 
         List<Item> itemList = itemDao.getAllItems();
         for(Item item : itemList){
-            itemDao.deleteItems(itemDao.getId());
+            itemDao.deleteItem(item.getItemId());
         }
     }
 
@@ -72,8 +74,8 @@ public class InvoiceDaoTest {
 
         Invoice invoice = new Invoice();
 
-        invoice.setCustomerId(customer.getId());
-        invoice.setOrderDate(LocalDate.of(2019,02,23);
+        invoice.setCustomerId(customer.getCustomerId());
+        invoice.setOrderDate(LocalDate.of(2019,02,23));
         invoice.setPickupDate(LocalDate.of(2019,02,23));
         invoice.setReturnDate(LocalDate.of(2019,02,25));
         invoice.setLateFee(new BigDecimal("1.0"));
@@ -111,8 +113,8 @@ public class InvoiceDaoTest {
 
         Invoice invoice = new Invoice();
 
-        invoice.setCustomerId(customer.getId());
-        invoice.setOrderDate(LocalDate.of(2019,02,23);
+        invoice.setCustomerId(customer.getCustomerId());
+        invoice.setOrderDate(LocalDate.of(2019,02,23));
         invoice.setPickupDate(LocalDate.of(2019,02,23));
         invoice.setReturnDate(LocalDate.of(2019,02,25));
         invoice.setLateFee(new BigDecimal("1.0"));
@@ -121,8 +123,8 @@ public class InvoiceDaoTest {
 
         Invoice invoice2 = new Invoice();
 
-        invoice2.setCustomerId(customer.getId());
-        invoice2.setOrderDate(LocalDate.of(2019,02,23);
+        invoice2.setCustomerId(customer.getCustomerId());
+        invoice2.setOrderDate(LocalDate.of(2019,02,23));
         invoice2.setPickupDate(LocalDate.of(2019,02,23));
         invoice2.setReturnDate(LocalDate.of(2019,02,25));
         invoice2.setLateFee(new BigDecimal("1.0"));
@@ -149,15 +151,15 @@ public class InvoiceDaoTest {
 
         Invoice invoice = new Invoice();
 
-        invoice.setCustomerId(customer.getId());
-        invoice.setOrderDate(LocalDate.of(2019,02,23);
+        invoice.setCustomerId(customer.getCustomerId());
+        invoice.setOrderDate(LocalDate.of(2019,02,23));
         invoice.setPickupDate(LocalDate.of(2019,02,23));
         invoice.setReturnDate(LocalDate.of(2019,02,25));
         invoice.setLateFee(new BigDecimal("1.0"));
 
         invoice = invoiceDao.addInvoice(invoice);
 
-        invoice.setOrderDate(LocalDate.of(2019,02,24);
+        invoice.setOrderDate(LocalDate.of(2019,02,24));
         invoice.setPickupDate(LocalDate.of(2019,02,25));
         invoice.setReturnDate(LocalDate.of(2019,02,26));
 

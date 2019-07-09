@@ -1,5 +1,8 @@
 package com.company.U1M6Summative.viewmodel;
 
+import com.company.U1M6Summative.model.Invoice;
+import com.company.U1M6Summative.model.Item;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 

@@ -38,7 +38,7 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao{
 
     @Override
     @Transactional
-    public Customer addCusotmer(Customer customer) {
+    public Customer addCustomer(Customer customer) {
         jdbcTemplate.update(INSERT_CUSTOMER_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(),
                 customer.getCompany(), customer.getPhone());
 

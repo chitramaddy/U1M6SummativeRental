@@ -1,9 +1,12 @@
 package com.company.U1M6Summative.viewmodel;
 
 import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.model.InvoiceItem;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class InvoiceViewModel {
@@ -14,6 +17,7 @@ public class InvoiceViewModel {
     private LocalDate pickupDate;
     private LocalDate returnDate;
     private BigDecimal lateFee;
+    private List<InvoiceItem> invoiceItems = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -63,22 +67,38 @@ public class InvoiceViewModel {
         this.lateFee = lateFee;
     }
 
+    public List<InvoiceItem> getInvoiceItems() {
+        return invoiceItems;
+    }
+
+    public void setInvoiceItems(List<InvoiceItem> invoiceItems) {
+        this.invoiceItems = invoiceItems;
+    }
+
+    public void addInvoiceItem(InvoiceItem invoiceItem){
+        invoiceItems.add(invoiceItem);
+    }
+
+    public void removeInvoiceItem(InvoiceItem invoiceItem){
+        invoiceItems.remove(invoiceItem);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof InvoiceViewModel)) return false;
         InvoiceViewModel that = (InvoiceViewModel) o;
-        return getId() == that.getId() &&
-                Objects.equals(getCustomer(),that.getCustomer()) &&
-                Objects.equals(getOrderDate(), that.getOrderDate()) &&
-                Objects.equals(getPickupDate(), that.getPickupDate()) &&
-                Objects.equals(getReturnDate(), that.getReturnDate()) &&
-                Objects.equals(getLateFee(), that.getLateFee());
+        return id == that.id &&
+                Objects.equals(customer, that.customer) &&
+                Objects.equals(orderDate, that.orderDate) &&
+                Objects.equals(pickupDate, that.pickupDate) &&
+                Objects.equals(returnDate, that.returnDate) &&
+                Objects.equals(lateFee, that.lateFee) &&
+                Objects.equals(invoiceItems, that.invoiceItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCustomer(), getOrderDate(), getPickupDate(), getReturnDate(),getLateFee());
+        return Objects.hash(id, customer, orderDate, pickupDate, returnDate, lateFee, invoiceItems);
     }
-
 }

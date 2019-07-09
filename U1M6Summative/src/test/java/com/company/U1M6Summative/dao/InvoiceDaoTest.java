@@ -44,7 +44,15 @@ public class InvoiceDaoTest {
 
         List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
         for(InvoiceItem invoiceItem : invoiceItemList){
+<<<<<<< HEAD
             invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_item_id());
+=======
+<<<<<<< HEAD
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_item_id());
+=======
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_id());
+>>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
+>>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
         }
 
         List<Item> itemList = itemDao.getAllItems();
@@ -159,12 +167,21 @@ public class InvoiceDaoTest {
 
         invoice = invoiceDao.addInvoice(invoice);
 
+<<<<<<< HEAD
         invoice.setOrderDate(LocalDate.of(2019,02,24));
+=======
+<<<<<<< HEAD
+        invoice.setOrderDate(LocalDate.of(2019,02,24));
+=======
+        invoice.setOrderDate(LocalDate.of(2019,02,24))
+        ;
+>>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
+>>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
         invoice.setPickupDate(LocalDate.of(2019,02,25));
         invoice.setReturnDate(LocalDate.of(2019,02,26));
 
         invoiceDao.updateInvoice(invoice);
-        
+
         Invoice invoiceCheck = invoiceDao.getInvoice(invoice.getId());
 
         assertEquals(invoice, invoiceCheck);

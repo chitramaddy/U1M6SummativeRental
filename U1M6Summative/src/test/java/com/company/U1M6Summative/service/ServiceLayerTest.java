@@ -2,6 +2,7 @@ package com.company.U1M6Summative.service;
 
 import com.company.U1M6Summative.dao.*;
 import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.viewmodel.CustomerViewModel;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,18 +34,73 @@ public class ServiceLayerTest {
 
     @Test
     public void saveCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        CustomerViewModel cvmFromService = serviceLayer.findCustomer(customer.getCustomerId());
+
+        assertEquals(cvmFromService, customerViewModel);
     }
 
     @Test
     public void findCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        CustomerViewModel cvmFromService = serviceLayer.findCustomer(customer.getCustomerId());
+
+        assertEquals(cvmFromService, customerViewModel);
+
     }
 
     @Test
     public void findAllCustomer() {
+        List<CustomerViewModel> cvmFromService = serviceLayer.findAllCustomers();
+
+        assertEquals(1, cvmFromService.size());
     }
 
     @Test
     public void updateCustomer() {
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+
+        Customer customer = new Customer();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        customerViewModel = serviceLayer.saveCustomer(customerViewModel);
+
+        customerViewModel.setCompany("The Awesomest Company");
+
+        serviceLayer.updateCustomer(customerViewModel);
+
+        CustomerViewModel customerViewModel1 = serviceLayer.findCustomer(customerViewModel.getCustomerId());
+
+        assertEquals(customerViewModel, customerViewModel1);
+
+
     }
 
     @Test
@@ -84,7 +140,7 @@ public class ServiceLayerTest {
         List<Customer> customerList = new ArrayList<Customer>();
         customerList.add(customer);
 
-        doReturn(customer).when(customerDao).addCusotmer(customer2);
+        doReturn(customer).when(customerDao).addCustomer(customer2);
         doReturn(customer).when(customerDao).getCustomerById(1);
         doReturn(customer).when(customerDao).getAllCustomers();
     }

@@ -63,7 +63,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 //
 //        Item item = new Item();
 //        item.setName("itemname");
@@ -109,7 +109,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Invoice invoice = new Invoice();
 
@@ -147,7 +147,7 @@ public class InvoiceDaoTest {
         customer.setCompany("customer company");
         customer.setPhone("23432432");
 
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Invoice invoice = new Invoice();
 

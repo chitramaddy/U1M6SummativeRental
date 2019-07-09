@@ -7,7 +7,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import sun.invoke.empty.Empty;
+
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -90,13 +90,16 @@ public class InvoiceDaoJdbcTemplateImpl implements  InvoiceDao{
         return jdbcTemplate.query(SELECT_ALL_INVOICES_SQL, this::mapRowToInvoice);
     }
 
-    public void updateInvoice(Invoice invoice){
+    @Transactional
+    public Invoice updateInvoice(Invoice invoice){
         jdbcTemplate.update(UPDATE_INVOICE_SQL, invoice.getCustomerId(),
                                                 Date.valueOf(invoice.getOrderDate()),
                                                 Date.valueOf(invoice.getPickupDate()),
                                                 Date.valueOf(invoice.getReturnDate()),
                                                 invoice.getLateFee(),
                                                 invoice.getId());
+
+        return invoice;
 
     }
 

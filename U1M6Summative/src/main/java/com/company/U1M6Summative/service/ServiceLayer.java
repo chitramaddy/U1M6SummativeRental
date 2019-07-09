@@ -42,7 +42,7 @@ public class ServiceLayer {
         return null;
     }
 
-    public List<CustomerViewModel> findAllCustomer(){
+    public List<CustomerViewModel> findAllCustomers(){
         return null;
     }
 
@@ -68,7 +68,7 @@ public class ServiceLayer {
         return null;
     }
 
-    @Transactional
+
     public ItemViewModel updateItem(ItemViewModel itemViewModel){
         return null;
     }

@@ -12,7 +12,7 @@ import java.util.Objects;
 public class InvoiceViewModel {
 
     private int id;
-    private Customer customer;
+    private CustomerViewModel customer;
     private LocalDate orderDate;
     private LocalDate pickupDate;
     private LocalDate returnDate;
@@ -27,11 +27,11 @@ public class InvoiceViewModel {
         this.id = id;
     }
 
-    public Customer getCustomer() {
+    public CustomerViewModel getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(CustomerViewModel customer) {
         this.customer = customer;
     }
 

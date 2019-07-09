@@ -5,35 +5,36 @@ import java.util.Objects;
 
 public class InvoiceItem {
 
-    private int invoice_item_id;
-    private int invoice_id;
-    private int item_id;
+    private int invoiceItemId;
+    private int invoiceId;
+    private int itemId;
     private int quantity;
-    private BigDecimal unit_rate;
+    private BigDecimal unitRate;
     private BigDecimal discount;
 
-    public int getInvoice_item_id() {
-        return invoice_item_id;
+
+    public int getInvoiceItemId() {
+        return invoiceItemId;
     }
 
-    public void setInvoice_item_id(int invoice_item_id) {
-        this.invoice_item_id = invoice_item_id;
+    public void setInvoiceItemId(int invoiceItemId) {
+        this.invoiceItemId = invoiceItemId;
     }
 
-    public int getInvoice_id() {
-        return invoice_id;
+    public int getInvoiceId() {
+        return invoiceId;
     }
 
-    public void setInvoice_id(int invoice_id) {
-        this.invoice_id = invoice_id;
+    public void setInvoiceId(int invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public int getQuantity() {
@@ -44,12 +45,12 @@ public class InvoiceItem {
         this.quantity = quantity;
     }
 
-    public BigDecimal getUnit_rate() {
-        return unit_rate;
+    public BigDecimal getUnitRate() {
+        return unitRate;
     }
 
-    public void setUnit_rate(BigDecimal unit_rate) {
-        this.unit_rate = unit_rate;
+    public void setUnitRate(BigDecimal unitRate) {
+        this.unitRate = unitRate;
     }
 
     public BigDecimal getDiscount() {
@@ -65,16 +66,16 @@ public class InvoiceItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceItem that = (InvoiceItem) o;
-        return invoice_item_id == that.invoice_item_id &&
-                invoice_id == that.invoice_id &&
-                item_id == that.item_id &&
+        return invoiceItemId == that.invoiceItemId &&
+                invoiceId == that.invoiceId &&
+                itemId == that.itemId &&
                 quantity == that.quantity &&
-                unit_rate.equals(that.unit_rate) &&
+                unitRate.equals(that.unitRate) &&
                 discount.equals(that.discount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(invoice_item_id, invoice_id, item_id, quantity, unit_rate, discount);
+        return Objects.hash(invoiceItemId, invoiceId, itemId, quantity, unitRate, discount);
     }
 }

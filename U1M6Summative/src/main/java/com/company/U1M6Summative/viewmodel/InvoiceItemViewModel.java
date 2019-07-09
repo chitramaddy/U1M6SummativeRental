@@ -8,19 +8,27 @@ import java.util.Objects;
 
 public class InvoiceItemViewModel {
 
-    private int invoice_item_id;
+    private int invoiceItemId;
     private Invoice invoice;
     private Item item;
     private int quantity;
-    private BigDecimal unit_rate;
+    private BigDecimal unitRate;
     private BigDecimal discount;
 
-    public int getInvoice_item_id() {
-        return invoice_item_id;
+    public int getInvoiceItemId() {
+        return invoiceItemId;
     }
 
-    public void setInvoice_item_id(int invoice_item_id) {
-        this.invoice_item_id = invoice_item_id;
+    public void setInvoiceItemId(int invoiceItemId) {
+        this.invoiceItemId = invoiceItemId;
+    }
+
+    public BigDecimal getUnitRate() {
+        return unitRate;
+    }
+
+    public void setUnitRate(BigDecimal unitRate) {
+        this.unitRate = unitRate;
     }
 
     public Invoice getInvoice() {
@@ -47,13 +55,7 @@ public class InvoiceItemViewModel {
         this.quantity = quantity;
     }
 
-    public BigDecimal getUnit_rate() {
-        return unit_rate;
-    }
 
-    public void setUnit_rate(BigDecimal unit_rate) {
-        this.unit_rate = unit_rate;
-    }
 
     public BigDecimal getDiscount() {
         return discount;
@@ -68,16 +70,16 @@ public class InvoiceItemViewModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceItemViewModel that = (InvoiceItemViewModel) o;
-        return invoice_item_id == that.invoice_item_id &&
+        return invoiceItemId == that.invoiceItemId &&
                 quantity == that.quantity &&
                 invoice.equals(that.invoice) &&
                 item.equals(that.item) &&
-                unit_rate.equals(that.unit_rate) &&
+                unitRate.equals(that.unitRate) &&
                 discount.equals(that.discount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(invoice_item_id, invoice, item, quantity, unit_rate, discount);
+        return Objects.hash(invoiceItemId, invoice, item, quantity, unitRate, discount);
     }
 }

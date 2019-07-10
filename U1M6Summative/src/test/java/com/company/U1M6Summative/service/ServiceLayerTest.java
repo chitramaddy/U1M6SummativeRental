@@ -207,7 +207,9 @@ public class ServiceLayerTest {
         customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
         item.setName("Book");
@@ -241,7 +243,9 @@ public class ServiceLayerTest {
         customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
         item.setName("Book");
@@ -279,7 +283,9 @@ public class ServiceLayerTest {
         customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
         item.setName("Book");
@@ -315,7 +321,9 @@ public class ServiceLayerTest {
         customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
         item.setName("Book");
@@ -356,7 +364,9 @@ public class ServiceLayerTest {
         customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
         item.setName("Book");
@@ -372,6 +382,29 @@ public class ServiceLayerTest {
 
         assertNull(invoiceCheck);
 
+
+    }
+
+    private Customer customerViewModelToCustomer(CustomerViewModel customer){
+
+        Customer customer1 = new Customer();
+        customer1.setCustomerId(customer.getCustomerId());
+        customer1.setFirstName(customer.getFirstName());
+        customer1.setLastName(customer.getLastName());
+        customer1.setEmail(customer.getEmail());
+        customer1.setCompany(customer.getCompany());
+        return customer1;
+
+    }
+
+    private Item itemViewModelToItem(Item item){
+
+        Item item1 = new Item();
+        item1.setItemId(item.getItemId());
+        item1.setName(item.getName());
+        item1.setDailyRate(item.getDailyRate());
+        item1.setDescription(item.getDescription());
+        return item1;
 
     }
     

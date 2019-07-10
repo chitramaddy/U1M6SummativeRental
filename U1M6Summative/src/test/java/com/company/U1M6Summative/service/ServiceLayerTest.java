@@ -1,59 +1,30 @@
 package com.company.U1M6Summative.service;
 
 import com.company.U1M6Summative.dao.*;
-<<<<<<< HEAD
-import com.company.U1M6Summative.model.InvoiceItem;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-=======
-<<<<<<< HEAD
-import com.company.U1M6Summative.model.Customer;
-import com.company.U1M6Summative.viewmodel.CustomerViewModel;
-import org.junit.Before;
-import org.junit.Test;
 
-=======
-<<<<<<< HEAD
-import com.company.U1M6Summative.model.Item;
-=======
-import com.company.U1M6Summative.model.Customer;
-import com.company.U1M6Summative.model.Invoice;
-import com.company.U1M6Summative.model.Item;
-import com.company.U1M6Summative.viewmodel.CustomerViewModel;
-import com.company.U1M6Summative.viewmodel.InvoiceItemViewModel;
-import com.company.U1M6Summative.viewmodel.InvoiceViewModel;
->>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
+import com.company.U1M6Summative.model.InvoiceItem;
 import com.company.U1M6Summative.viewmodel.ItemViewModel;
 import org.junit.Before;
 import org.junit.Test;
 
-<<<<<<< HEAD
-import java.awt.print.Book;
-=======
-import java.math.BigDecimal;
-import java.time.LocalDate;
->>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
->>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
+import com.company.U1M6Summative.model.Item;
+import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.model.Invoice;
+import com.company.U1M6Summative.viewmodel.CustomerViewModel;
+import com.company.U1M6Summative.viewmodel.InvoiceViewModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 13d1fcf8e0a1c8b74db28f0606807306a6de827f
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-=======
+
+//import static org.mockito.Mockito.doReturn;
+//import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.*;
->>>>>>> 185c7b4048535225e8c00de1879a5e3f22e762ea
+
 
 public class ServiceLayerTest {
 
@@ -229,24 +200,26 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
 
-        InvoiceViewModel invoice2 = serviceLayer.findInvoice(ivm.getId());
+        InvoiceViewModel invoice2 = serviceLayer.findInvoice(ivm.getInvoiceId());
 
         assertEquals(ivm,invoice2);
 
@@ -263,24 +236,26 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
 
-        int invoiceId = ivm.getId();
+        int invoiceId = ivm.getInvoiceId();
 
         InvoiceViewModel invoice2 = serviceLayer.findInvoice(invoiceId);
 
@@ -301,19 +276,21 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -337,19 +314,21 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.25"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -361,7 +340,7 @@ public class ServiceLayerTest {
 
         InvoiceViewModel invoice2 = serviceLayer.updateInvoice(ivm);
 
-        InvoiceViewModel invoiceCheck = serviceLayer.findInvoice(ivm.getId());
+        InvoiceViewModel invoiceCheck = serviceLayer.findInvoice(ivm.getInvoiceId());
 
         assertEquals(invoice2, invoiceCheck);
 
@@ -378,29 +357,54 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
-        ivm.setCustomer(customer);
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        ivm.setCustomer(customer1);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
 
-        serviceLayer.removeInvoice(ivm.getId());
+        serviceLayer.removeInvoice(ivm.getInvoiceId());
 
-        InvoiceViewModel invoiceCheck = serviceLayer.findInvoice(ivm.getId());
+        InvoiceViewModel invoiceCheck = serviceLayer.findInvoice(ivm.getInvoiceId());
 
         assertNull(invoiceCheck);
 
+
+    }
+
+    private Customer customerViewModelToCustomer(CustomerViewModel customer){
+
+        Customer customer1 = new Customer();
+        customer1.setCustomerId(customer.getCustomerId());
+        customer1.setFirstName(customer.getFirstName());
+        customer1.setLastName(customer.getLastName());
+        customer1.setEmail(customer.getEmail());
+        customer1.setCompany(customer.getCompany());
+        return customer1;
+
+    }
+
+    private Item itemViewModelToItem(Item item){
+
+        Item item1 = new Item();
+        item1.setItemId(item.getItemId());
+        item1.setName(item.getName());
+        item1.setDailyRate(item.getDailyRate());
+        item1.setDescription(item.getDescription());
+        return item1;
 
     }
     
@@ -438,7 +442,7 @@ public class ServiceLayerTest {
         invoiceDao = mock(InvoiceDaoJdbcTemplateImpl.class);
 
         Invoice invoice = new Invoice();
-        invoice.setId(20);
+        invoice.setInvoiceId(20);
         invoice.setCustomerId(10);
         invoice.setOrderDate(LocalDate.of(2012,2,24));
         invoice.setPickupDate(LocalDate.of(2012,2,25));
@@ -456,7 +460,7 @@ public class ServiceLayerTest {
         //-----------------------------------------------------------------------
 
         Invoice invoiceUpdate = new Invoice();
-        invoice.setId(22);
+        invoice.setInvoiceId(22);
         invoice.setCustomerId(10);
         invoice.setCustomerId(10);
         invoice.setOrderDate(LocalDate.of(2012,2,25));
@@ -465,7 +469,7 @@ public class ServiceLayerTest {
         invoice.setLateFee(new BigDecimal("2.25"));
 
         Invoice invoiceWithUpdate = new Invoice();
-        invoice.setId(22);
+        invoice.setInvoiceId(22);
         invoice.setCustomerId(10);
         invoice.setCustomerId(10);
         invoice.setOrderDate(LocalDate.of(2012,2,25));
@@ -498,10 +502,10 @@ public class ServiceLayerTest {
         doReturn(invoiceList).when(invoiceDao).getAllInvoices();
 
         doReturn(invoiceAfterAdd).when(invoiceDao).addInvoice(invoiceBeforeUpdate);
-        doReturn(invoiceUpdate).when(invoiceDao).getInvoice(invoiceWithUpdate.getId());
+        doReturn(invoiceUpdate).when(invoiceDao).getInvoice(invoiceWithUpdate.getInvoiceId());
         doReturn(invoiceUpdate).when(invoiceDao).updateInvoice(invoiceWithUpdate);
 
-        doReturn(null).when(invoiceDao).deleteInvoice(invoice.getId());
+        doReturn(null).when(invoiceDao).deleteInvoice(invoice.getInvoiceId());
 
 
     }
@@ -566,7 +570,6 @@ public class ServiceLayerTest {
         doReturn(invoiceItem).when(invoiceItemDao).getInvoiceItem(1);
         doReturn(invoiceItem).when(invoiceItemDao).getAllInvoiceItems();
     }
-
 
 
 }

@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Invoice {
 
-    private int id;
+    private int invoiceId;
     private int customerId;
     private LocalDate orderDate;
     private LocalDate pickupDate;
@@ -16,12 +16,12 @@ public class Invoice {
     private BigDecimal lateFee;
 
 
-    public int getId() {
-        return id;
+    public int getInvoiceId() {
+        return invoiceId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setInvoiceId(int invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
     public int getCustomerId() {
@@ -69,7 +69,7 @@ public class Invoice {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Invoice that = (Invoice) o;
-        return getId() == that.getId() &&
+        return getInvoiceId() == that.getInvoiceId() &&
                 getCustomerId() == that.getCustomerId() &&
                 Objects.equals(getOrderDate(), that.getOrderDate()) &&
                 Objects.equals(getPickupDate(), that.getPickupDate()) &&
@@ -79,6 +79,6 @@ public class Invoice {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCustomerId(), getOrderDate(), getPickupDate(), getReturnDate(),getLateFee());
+        return Objects.hash(getInvoiceId(), getCustomerId(), getOrderDate(), getPickupDate(), getReturnDate(),getLateFee());
     }
 }

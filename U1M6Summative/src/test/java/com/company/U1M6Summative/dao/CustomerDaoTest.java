@@ -39,13 +39,13 @@ public class CustomerDaoTest {
         List<InvoiceItem> invoiceItemList = new ArrayList<>();
 
         for(InvoiceItem invoiceItem : invoiceItemList){
-            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoice_item_id());
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
         }
 
         List<Invoice> invoiceList = new ArrayList<>();
 
         for(Invoice invoice : invoiceList){
-            invoiceDao.deleteInvoice(invoice.getId());
+            invoiceDao.deleteInvoice(invoice.getInvoiceId());
         }
 
         List<Customer> customerList = new ArrayList<>();

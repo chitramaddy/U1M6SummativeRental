@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -57,23 +58,44 @@ public class ServiceLayer {
 
     //Item API
     public ItemViewModel saveItem(ItemViewModel itemViewModel){
-        return null;
+
+        Item item = new Item();
+        item.setDescription(itemViewModel.getDescription());
+        item.setDailyRate(itemViewModel.getDailyRate());
+        item.setName(itemViewModel.getName());
+        item = itemDao.addItem(item);
+
+        itemViewModel.setItemId(item.getItemId());
+
+        return  itemViewModel;
     }
 
     public ItemViewModel findItem(int id){
-        return null;
+
+        return buildItemViewModel(itemDao.getItem(id));
     }
 
     public List<ItemViewModel> findAllItem(){
-        return null;
+        List<Item> itemList = new ArrayList<>();
+        List<ItemViewModel> itemViewModelList = new ArrayList<>();
+        for (Item item : itemList) {
+            itemViewModelList.add(buildItemViewModel(item));
+        }
+        return itemViewModelList;
     }
 
 
     public ItemViewModel updateItem(ItemViewModel itemViewModel){
-        return null;
+        Item item = new Item();
+        item.setDescription(itemViewModel.getDescription());
+        item.setDailyRate(itemViewModel.getDailyRate());
+        item.setName(itemViewModel.getName());
+        itemDao.updateItem(item);
+        return itemViewModel;
     }
 
     public void removeItem(int id){
+        itemDao.deleteItem(id);
 
     }
 
@@ -111,6 +133,14 @@ public class ServiceLayer {
     }
 
     private ItemViewModel buildItemViewModel(Item item){
-        return null;
+
+        item = itemDao.addItem(item);
+        ItemViewModel itemViewModel = new ItemViewModel();
+        itemViewModel.setDescription(item.getDescription());
+        itemViewModel.setDailyRate(item.getDailyRate());
+        itemViewModel.setName(item.getName());
+        itemViewModel.setItemId(item.getItemId());
+
+        return  itemViewModel;
     }
 }

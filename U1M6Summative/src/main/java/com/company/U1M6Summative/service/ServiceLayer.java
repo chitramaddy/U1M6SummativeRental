@@ -103,6 +103,7 @@ public class ServiceLayer {
 
         invoiceViewModel.setInvoiceItems(invoiceItems);
 
+        
         return invoiceViewModel;
     }
 

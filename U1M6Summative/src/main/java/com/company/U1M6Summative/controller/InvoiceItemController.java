@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class InvoiceItemController {
 
-        private List<InvoiceItem> invoiceItemList = new ArrayList<InvoiceItem>();
+   /*     private List<InvoiceItem> invoiceItemList = new ArrayList<InvoiceItem>();
 
         @RequestMapping(value = "/invoiceitem", method = RequestMethod.POST)
         @ResponseStatus(HttpStatus.OK)
@@ -71,7 +71,7 @@ public class InvoiceItemController {
             }
 
             throw new IllegalArgumentException("Invoice Item not found.");
-        }
+        }*/
 }
 
 

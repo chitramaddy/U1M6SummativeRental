@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class ItemController {
 
-    private List<Item> list = new ArrayList<>();
+  /*  private List<Item> list = new ArrayList<>();
 
     @RequestMapping(value = "/item", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
@@ -79,6 +79,6 @@ public class ItemController {
         }
 
         throw new IllegalArgumentException("item not found.");
-    }
+    }*/
 
 }

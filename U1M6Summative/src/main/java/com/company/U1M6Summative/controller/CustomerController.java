@@ -16,14 +16,11 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.OK)
     public Customer addCustomer(@RequestBody Customer customer){
 
-        int id = 1;
-        customer.setCustomerId(id);
-        customerList.add(customer);
-        return customer;
+       return customer;
 
     }
 
-    @RequestMapping(value = "/customer", method = RequestMethod.GET)
+  /*  @RequestMapping(value = "/customer", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public List<Customer> getCustomerList() {
         return customerList;
@@ -69,5 +66,5 @@ public class CustomerController {
         }
 
         throw new IllegalArgumentException("customer not found.");
-    }
+    }*/
 }

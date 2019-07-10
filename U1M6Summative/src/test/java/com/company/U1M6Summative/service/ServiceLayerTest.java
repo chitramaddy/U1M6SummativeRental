@@ -200,19 +200,19 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
         ivm.setCustomer(customer);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -234,19 +234,19 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
         ivm.setCustomer(customer);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -272,19 +272,19 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
         ivm.setCustomer(customer);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -308,19 +308,19 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.25"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
         ivm.setCustomer(customer);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);
@@ -349,19 +349,19 @@ public class ServiceLayerTest {
         ivm.setLateFee(new BigDecimal("2.20"));
 
         CustomerViewModel customer = new CustomerViewModel();
-        customer.setFirstName("customer");
-        customer.setLastName("customer lastname");
-        customer.setCompany("customer company");
-        customer.setEmail("customer email");
-        customer.setPhone("customer phone");
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
         customer = serviceLayer.saveCustomer(customer);
 
         ivm.setCustomer(customer);
 
         ItemViewModel item = new ItemViewModel();
-        item.setName("item");
-        item.setDescription("item description");
-        item.setDailyRate(2.20);
+        item.setName("Book");
+        item.setDailyRate(1.20);
+        item.setDescription("first book");
         item = serviceLayer.saveItem(item);
 
         ivm = serviceLayer.saveInvoice(ivm);

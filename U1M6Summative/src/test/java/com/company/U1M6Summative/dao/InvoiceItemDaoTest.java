@@ -43,7 +43,7 @@ public class InvoiceItemDaoTest {
         List<Invoice> invoiceList = invoiceDao.getAllInvoices();
 
         for (Invoice i : invoiceList) {
-            invoiceDao.deleteInvoice(i.getId());
+            invoiceDao.deleteInvoice(i.getInvoiceId());
         }
 
         List<Customer> cList = customerDao.getAllCustomers();
@@ -74,7 +74,7 @@ public class InvoiceItemDaoTest {
         customer.setCompany("Triology");
         customer.setPhone("123-234-3456");
         customer.setEmail("abcd@yahoo.com");
-        customer = customerDao.addCusotmer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Invoice invoice = new Invoice();
         invoice.setCustomerId(customer.getCustomerId());

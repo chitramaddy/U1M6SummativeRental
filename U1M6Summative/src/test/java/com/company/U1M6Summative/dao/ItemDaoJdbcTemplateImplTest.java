@@ -1,6 +1,8 @@
 package com.company.U1M6Summative.dao;
 
 import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.model.Invoice;
+import com.company.U1M6Summative.model.InvoiceItem;
 import com.company.U1M6Summative.model.Item;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,12 +21,12 @@ public class ItemDaoJdbcTemplateImplTest {
 
     @Autowired
     ItemDao itemDao;
-//    @Autowired
-//    CustomerDao customerDao;
-//    @Autowired
-//    InvoiceDao invoiceDao;
-//    @Autowired
-//    InvoiceItemDao invoiceItemDao;
+    @Autowired
+    CustomerDao customerDao;
+    @Autowired
+    InvoiceDao invoiceDao;
+    @Autowired
+    InvoiceItemDao invoiceItemDao;
 
     @Before
     public void setUp() throws Exception {
@@ -33,24 +35,24 @@ public class ItemDaoJdbcTemplateImplTest {
             itemDao.deleteItem(t.getItemId());
         }
 
-//        List<Customer> cList = customerDao.getAllCustomers();
-//
-//        for (Customer customer : cList) {
-//            customerDao.deleteCustomer(customer.getCustomerId());
-//        }
+        List<Customer> cList = customerDao.getAllCustomers();
 
-//        List<Artist> artistList = artistDao.getAllArtists();
-//
-//        for (Artist a : artistList) {
-//            artistDao.deleteArtist(a.getId());
-//        }
-//
-//        List<Label> lList = labelDao.getAllLabels();
-//
-//        for (Label l : lList) {
-//            labelDao.deleteLabel(l.getId());
-//        }
-    }
+        for (Customer customer : cList) {
+            customerDao.deleteCustomer(customer.getCustomerId());
+        }
+
+        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
+
+        for (InvoiceItem invoiceItem : invoiceItemList) {
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
+        }
+
+        List<Invoice> invoiceList = invoiceDao.getAllInvoices();
+
+        for (Invoice invoice : invoiceList) {
+            invoiceDao.deleteInvoice(invoice.getInvoiceId());
+        }
+}
 
     @Test
     public void addGetDeleteItem() {

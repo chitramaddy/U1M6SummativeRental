@@ -8,13 +8,13 @@ public interface InvoiceDao {
 
     Invoice addInvoice(Invoice invoice);
 
-    Invoice getInvoice(int id);
+    Invoice getInvoice(int invoiceId);
 
     List<Invoice> getAllInvoices();
 
     Invoice updateInvoice(Invoice invoice);
 
-    void deleteInvoice(int id);
+    void deleteInvoice(int invoiceId);
 
     List<Invoice> findInvoiceByCustomer(int customerId);
 

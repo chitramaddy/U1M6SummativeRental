@@ -128,6 +128,21 @@ public class ServiceLayer {
         return invoiceViewModel;
     }
 
+    public List<InvoiceViewModel> findAllInvoicesByCustomer(int customerId){
+
+        List<Invoice> invoiceList = invoiceDao.findInvoiceByCustomer(customerId);
+
+        List<InvoiceViewModel> invoiceViewModelList = new ArrayList<>();
+
+        for(Invoice invoice : invoiceList){
+            InvoiceViewModel invoiceViewModel = buildInvoiceViewModel(invoice);
+            invoiceViewModelList.add(invoiceViewModel);
+        }
+
+        return invoiceViewModelList;
+
+    }
+
     @Transactional
     public InvoiceViewModel updateInvoice(InvoiceViewModel invoiceViewModel){
         Invoice invoice = new Invoice();
@@ -141,11 +156,11 @@ public class ServiceLayer {
         invoiceDao.updateInvoice(invoice);
 
         //---------------------------------------
-        List<InvoiceItem> invoiceItemList =
+        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItemsByInvoice(invoiceViewModel.getInvoiceId());
 
         invoiceItemList.stream().forEach( element -> invoiceItemDao.deleteInvoiceItem(element.getInvoiceId()));
 
-        List<InvoiceItem> invoiceItemList1 = invoiceItemDao.getAllInvoiceItems();
+        List<InvoiceItem> invoiceItemList1 = invoiceViewModel.getInvoiceItems();
         invoiceItemList1.stream().forEach(element ->
                                  {
                                      element.setInvoiceId(invoiceViewModel.getInvoiceId());
@@ -161,7 +176,7 @@ public class ServiceLayer {
 
     public void removeInvoice(int id){
 
-        List<InvoiceItem> invoiceItemList = invoiceItemDao.getInvoiceItemsByInvoice(id);
+        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItemsByInvoice(id);
 
         invoiceItemList.stream().forEach(element -> invoiceItemDao.deleteInvoiceItem(element.getInvoiceId()));
 

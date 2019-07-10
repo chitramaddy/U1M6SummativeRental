@@ -9,54 +9,59 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RestController
-//@RequestMapping("/invoice")
-//public class InvoiceController {
-//
-//
-//    @Autowired
-//    ServiceLayer serviceLayer;
-//
-//
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public InvoiceViewModel addInvoice(InvoiceViewModel viewModel){
-//        return viewModel;
-//    }
-//
-//
-//    @GetMapping("{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public InvoiceViewModel getInvoice(@PathVariable("invoiceId") int invoiceId){
-//        return null;
-//    }
-//
-//    @GetMapping
-//    @ResponseStatus(HttpStatus.OK)
-//    public List<Invoice> getAllInvoices(){
-//        return null;
-//    }
-//
-//    @GetMapping("customer/{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public List<Invoice> getAllInvoicesByCustomer(@PathVariable("customerId") int customerId){
-//        return null;
-//    }
-//
-//
-//    @PutMapping
-//    @ResponseStatus(HttpStatus.OK)
-//    public void updateInvoice(@RequestBody Invoice invoice){
-//
-//    }
-//
-//
-//    @DeleteMapping({"id"})
-//    @ResponseStatus(HttpStatus.OK)
-//    public void deleteInvoice(@PathVariable("invoiceId") int invoiceId){
-//
-//    }
-//
+@RestController
+@RequestMapping("/invoice")
+public class InvoiceController {
+
+
+    @Autowired
+    ServiceLayer serviceLayer;
+
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public InvoiceViewModel addInvoice(InvoiceViewModel viewModel){
+        return serviceLayer.saveInvoice(viewModel);
+
+    }
+
+
+    @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public InvoiceViewModel getInvoice(@PathVariable("invoiceId") int invoiceId){
+        return serviceLayer.findInvoice(invoiceId);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<InvoiceViewModel> getAllInvoices(){
+        return serviceLayer.findAllInvoice();
+    }
+
+    @GetMapping("customer/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<InvoiceViewModel> getAllInvoicesByCustomer(@PathVariable("customerId") int customerId){
+        return serviceLayer.findAllInvoicesByCustomer(customerId);
+    }
+
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public InvoiceViewModel updateInvoice(@RequestBody InvoiceViewModel invoice){
+
+        return serviceLayer.updateInvoice(invoice);
+
+    }
+
+
+    @DeleteMapping({"id"})
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteInvoice(@PathVariable("invoiceId") int invoiceId){
+
+        serviceLayer.removeInvoice(invoiceId);
+
+    }
+
 
 
 

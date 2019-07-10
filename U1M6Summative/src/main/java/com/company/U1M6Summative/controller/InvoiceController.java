@@ -52,7 +52,7 @@ public class InvoiceController {
 
     @DeleteMapping({"id"})
     @ResponseStatus(HttpStatus.OK)
-    public void deleteInvoice(@PathVariable("invoideId") int invoiceId){
+    public void deleteInvoice(@PathVariable("invoiceId") int invoiceId){
 
     }
 

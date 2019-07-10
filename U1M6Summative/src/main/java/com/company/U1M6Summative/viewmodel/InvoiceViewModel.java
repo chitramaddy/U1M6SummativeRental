@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class InvoiceViewModel {
 
-    private int id;
+    private int invoiceId;
     private CustomerViewModel customer;
     private LocalDate orderDate;
     private LocalDate pickupDate;
@@ -19,12 +19,12 @@ public class InvoiceViewModel {
     private BigDecimal lateFee;
     private List<InvoiceItem> invoiceItems = new ArrayList<>();
 
-    public int getId() {
-        return id;
+    public int getInvoiceId() {
+        return invoiceId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setInvoiceId(int invoiceId) {
+        this.invoiceId = invoiceId;
     }
 
     public CustomerViewModel getCustomer() {
@@ -88,7 +88,7 @@ public class InvoiceViewModel {
         if (this == o) return true;
         if (!(o instanceof InvoiceViewModel)) return false;
         InvoiceViewModel that = (InvoiceViewModel) o;
-        return id == that.id &&
+        return invoiceId == that.invoiceId &&
                 Objects.equals(customer, that.customer) &&
                 Objects.equals(orderDate, that.orderDate) &&
                 Objects.equals(pickupDate, that.pickupDate) &&
@@ -99,6 +99,6 @@ public class InvoiceViewModel {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, customer, orderDate, pickupDate, returnDate, lateFee, invoiceItems);
+        return Objects.hash(invoiceId, customer, orderDate, pickupDate, returnDate, lateFee, invoiceItems);
     }
 }

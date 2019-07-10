@@ -42,7 +42,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
 
         List<Invoice> inList = InvoiceDao.getAllInvoices();
         inList.stream()
-                .forEach(invoice -> InvoiceDao.deleteInvoice(invoice.getId()));
+                .forEach(invoice -> InvoiceDao.deleteInvoice(invoice.getInvoiceId()));
 
         List<InvoiceItem> invList = InvoiceItemDao.getAllInvoiceItems();
         invList.stream()
@@ -77,12 +77,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
         customer.setPhone("912-555-5555");
-<<<<<<< HEAD
-        customer = CustomerDao.addCusotmer(customer);
-=======
         customer = CustomerDao.addCustomer(customer);
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
-
 
         Item item = new Item();
         item.setName("Pencil");
@@ -93,17 +88,13 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
         invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-<<<<<<< HEAD
         invoice.setReturnDate(LocalDate.of(2019, 06, 19));
-=======
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
         invoice.setLateFee(new BigDecimal(12.25));
         invoice = InvoiceDao.addInvoice(invoice);
 
 
         InvoiceItem invoiceItem = new InvoiceItem();
-        invoiceItem.setInvoiceId(invoice.getId());
+        invoiceItem.setInvoiceId(invoice.getInvoiceId());
         invoiceItem.setItemId(item.getItemId());
         invoiceItem.setQuantity(40);
         invoiceItem.setUnitRate(new BigDecimal(1.5));
@@ -133,11 +124,8 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
         customer.setPhone("912-555-5555");
-<<<<<<< HEAD
-        CustomerDao.addCusotmer(customer);
-=======
+
         CustomerDao.addCustomer(customer);
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
 
         Item item = new Item();
         item.setName("Pencil");
@@ -149,17 +137,13 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
         invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-<<<<<<< HEAD
         invoice.setReturnDate(LocalDate.of(2019, 06, 19));
         invoice.setLateFee(new BigDecimal("12.25"));
-=======
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
-        invoice.setLateFee(new BigDecimal(12.25));
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
+
         InvoiceDao.addInvoice(invoice);
 
         InvoiceItem invoiceItem = new InvoiceItem();
-        invoiceItem.setInvoiceId(invoice.getId());
+        invoiceItem.setInvoiceId(invoice.getInvoiceId());
         invoiceItem.setItemId(item.getItemId());
         invoiceItem.setQuantity(40);
         invoiceItem.setUnitRate(new BigDecimal("1.5"));
@@ -181,11 +165,7 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         customer.setEmail("totallyrealemail@perc.com");
         customer.setCompany("Cognizant");
         customer.setPhone("912-555-5555");
-<<<<<<< HEAD
-        CustomerDao.addCusotmer(customer);
-=======
         CustomerDao.addCustomer(customer);
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
 
         Item item = new Item();
         item.setName("Pencil");
@@ -195,19 +175,15 @@ public class InvoiceItemDaoJdbcTemplateImplTest {
         Invoice invoice = new Invoice();
         invoice.setCustomerId(customer.getCustomerId());
         invoice.setOrderDate(LocalDate.of(2019, 06,12));
-<<<<<<< HEAD
+
         invoice.setPickupDate(LocalDate.of(2019,06,16));
         invoice.setReturnDate(LocalDate.of(2019, 06, 19));
         invoice.setLateFee(new BigDecimal("12.25"));
-=======
-        invoice.setPickupDate(LocalDate.of(2019, 06, 16));
-        invoice.setReturnDate((LocalDate.of(2019, 06, 19)));
-        invoice.setLateFee(new BigDecimal(12.25));
->>>>>>> 69bb675fab7200842137dc6e6db79d08aed4e002
+
         InvoiceDao.addInvoice(invoice);
 
         InvoiceItem invoiceItem = new InvoiceItem();
-        invoiceItem.setInvoiceId(invoice.getId());
+        invoiceItem.setInvoiceId(invoice.getInvoiceId());
         invoiceItem.setItemId(item.getItemId());
         invoiceItem.setQuantity(40);
         invoiceItem.setUnitRate(new BigDecimal("1.5"));

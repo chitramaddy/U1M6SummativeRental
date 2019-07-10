@@ -101,9 +101,10 @@ public class ServiceLayer {
             invoiceItemDao.addInvoiceItem(element);
         });
 
+        
         invoiceViewModel.setInvoiceItems(invoiceItems);
 
-        
+
         return invoiceViewModel;
     }
 

@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/invoice")
 public class InvoiceController {
 
+/*
     @Autowired
     ServiceLayer serviceLayer;
 
@@ -57,6 +58,7 @@ public class InvoiceController {
     }
 
 
+*/
 
 
 

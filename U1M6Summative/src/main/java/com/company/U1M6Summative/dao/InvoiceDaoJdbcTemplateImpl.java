@@ -46,7 +46,7 @@ public class InvoiceDaoJdbcTemplateImpl implements  InvoiceDao{
 
     public Invoice mapRowToInvoice(ResultSet rs, int rowNumber) throws SQLException {
         Invoice invoice = new Invoice();
-        invoice.setId(rs.getInt("invoice_id"));
+        invoice.setInvoiceId(rs.getInt("invoice_id"));
         invoice.setCustomerId(rs.getInt("customer_id"));
         invoice.setOrderDate(rs.getDate("order_date").toLocalDate());
         invoice.setPickupDate(rs.getDate("pickup_date").toLocalDate());
@@ -69,7 +69,7 @@ public class InvoiceDaoJdbcTemplateImpl implements  InvoiceDao{
 
         int invoiceId = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
 
-        invoice.setId(invoiceId);
+        invoice.setInvoiceId(invoiceId);
 
         return invoice;
 
@@ -97,7 +97,7 @@ public class InvoiceDaoJdbcTemplateImpl implements  InvoiceDao{
                                                 Date.valueOf(invoice.getPickupDate()),
                                                 Date.valueOf(invoice.getReturnDate()),
                                                 invoice.getLateFee(),
-                                                invoice.getId());
+                                                invoice.getInvoiceId());
 
         return invoice;
 

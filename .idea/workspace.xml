@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b616f05f-8beb-4958-b8e1-89481bc94fce" name="Default Changelist" comment="">
 <<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/controller/InvoiceItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -11,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/viewmodel/InvoiceViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/viewmodel/InvoiceViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/service/ServiceLayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/service/ServiceLayerTest.java" afterDir="false" />
 >>>>>>> a66de67d01790d25cd554c05fe47514f1d0537fd
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     </list>
     <ignored path="$PROJECT_DIR$/U1M6Summative/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,6 +28,14 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+=======
 <<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -128,6 +141,7 @@
                 <element signature="e#1492#1493#0" expanded="true" />
                 <element signature="e#1519#1520#0" expanded="true" />
               </folding>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
             </state>
           </provider>
         </entry>
@@ -135,6 +149,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/InvoiceItemDaoJdbcTemplateImpl.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="340">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+=======
             <state relative-caret-position="427">
               <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
 =======
@@ -241,6 +259,7 @@
                 <element signature="imports" expanded="true" />
 >>>>>>> a66de67d01790d25cd554c05fe47514f1d0537fd
               </folding>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
             </state>
           </provider>
         </entry>
@@ -288,7 +307,11 @@
         <option value="$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImplTest.java" />
         <option value="$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/viewmodel/InvoiceViewModel.java" />
         <option value="$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/service/ServiceLayerTest.java" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+=======
 >>>>>>> a66de67d01790d25cd554c05fe47514f1d0537fd
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
       </list>
     </option>
   </component>
@@ -506,7 +529,11 @@
     </option>
   </component>
   <component name="RunManager">
+<<<<<<< HEAD
+    <configuration name="CustomerDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
     <configuration name="InvoiceItemDaoJdbcTemplateImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
       <module name="U1M6Summative" />
       <extension name="coverage">
         <pattern>
@@ -515,7 +542,11 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.company.U1M6Summative.dao" />
+<<<<<<< HEAD
+      <option name="MAIN_CLASS_NAME" value="com.company.U1M6Summative.dao.CustomerDaoTest" />
+=======
       <option name="MAIN_CLASS_NAME" value="com.company.U1M6Summative.dao.InvoiceItemDaoJdbcTemplateImplTest" />
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -523,7 +554,11 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="JUnit.CustomerDaoTest" />
+=======
         <item itemvalue="JUnit.InvoiceItemDaoJdbcTemplateImplTest" />
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
       </list>
     </recent_temporary>
   </component>
@@ -550,9 +585,13 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30794272" />
+=======
       <window_info id="Learn" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31342283" />
 >>>>>>> a66de67d01790d25cd554c05fe47514f1d0537fd
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -562,6 +601,7 @@
       <window_info id="DB Browser" order="7" />
       <window_info id="Project Explorer" order="8" />
       <window_info id="Job Explorer" order="9" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32921812" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -677,6 +717,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/U1M6SummativeApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -727,6 +769,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/InvoiceDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -749,6 +792,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/InvoiceItemDaoJdbcTemplateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -808,6 +853,7 @@
             <element signature="e#1119#1120#0" expanded="true" />
             <element signature="e#1153#1154#0" expanded="true" />
 =======
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/ItemDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -815,6 +861,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -822,6 +870,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/model/Invoice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -852,6 +901,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-325">
@@ -936,6 +987,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -979,6 +1031,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/CustomerDaoJdbcTemplateImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -998,6 +1052,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> f38493f2aaf03bb93172b666a290cc2e9d309189
     <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/U1M6SummativeApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1103,6 +1158,88 @@
             <element signature="imports" expanded="true" />
           </folding>
 >>>>>>> a66de67d01790d25cd554c05fe47514f1d0537fd
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/service/ServiceLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="64" column="51" lean-forward="true" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/CustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/CustomerDaoJdbcTemplateImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/dao/CustomerDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/viewmodel/CustomerViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/test/java/com/company/U1M6Summative/service/ServiceLayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="207" column="55" lean-forward="true" selection-start-line="207" selection-start-column="55" selection-end-line="207" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/ItemDaoJdbcTemplateImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/U1M6Summative/src/main/java/com/company/U1M6Summative/dao/InvoiceItemDaoJdbcTemplateImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>

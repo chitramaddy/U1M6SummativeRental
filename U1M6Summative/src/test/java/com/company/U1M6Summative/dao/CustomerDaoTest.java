@@ -66,7 +66,7 @@ public class CustomerDaoTest {
         customer.setEmail("cm@cm.com");
         customer.setCompany("The Cool Company");
         customer.setPhone("123-456-7890");
-        customerDao.addCustomer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Customer customer1 = customerDao.getCustomerById(customer.getCustomerId());
 
@@ -111,7 +111,7 @@ public class CustomerDaoTest {
         customer.setEmail("cm@cm.com");
         customer.setCompany("The Cool Company");
         customer.setPhone("123-456-7890");
-        customerDao.addCustomer(customer);
+        customer = customerDao.addCustomer(customer);
 
         Customer customer1 = customerDao.getCustomerById(customer.getCustomerId());
 
@@ -132,7 +132,7 @@ public class CustomerDaoTest {
         customerDao.addCustomer(customer);
 
         customer.setPhone("111-111-1111");
-        customerDao.updateCustomer(customer);
+        customer = customerDao.updateCustomer(customer);
 
         Customer customer1 = customerDao.getCustomerById(customer.getCustomerId());
 

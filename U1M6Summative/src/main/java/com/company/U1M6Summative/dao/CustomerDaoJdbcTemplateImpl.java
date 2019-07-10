@@ -42,7 +42,7 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao{
         jdbcTemplate.update(INSERT_CUSTOMER_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(),
                 customer.getCompany(), customer.getPhone());
 
-        int id = jdbcTemplate.queryForObject("select Last_INSERT_ID", Integer.class);
+        int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
         customer.setCustomerId(id);
 
         return customer;
@@ -66,9 +66,11 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao{
     }
 
     @Override
-    public void updateCustomer(Customer customer) {
+    public Customer updateCustomer(Customer customer) {
         jdbcTemplate.update(UPDATE_CUSOTMER_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(),
                 customer.getCompany(), customer.getPhone(), customer.getCustomerId());
+
+        return customer;
 
     }
 
@@ -81,11 +83,11 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao{
 
     private Customer mapRowToCustomer(ResultSet rs, int rowNum) throws SQLException {
         Customer customer = new Customer();
+        customer.setCustomerId(rs.getInt("customer_id"));
         customer.setFirstName(rs.getString("first_name"));
         customer.setLastName(rs.getString("last_name"));
-        customer.setCustomerId(rs.getInt("customer_id"));
+        customer.setCompany(rs.getString("company"));
         customer.setEmail(rs.getString("email"));
-        customer.setCustomerId(rs.getInt("company"));
         customer.setPhone(rs.getString("phone"));
 
         return customer;

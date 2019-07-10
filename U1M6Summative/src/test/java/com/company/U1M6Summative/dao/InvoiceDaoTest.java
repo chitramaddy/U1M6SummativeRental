@@ -6,7 +6,10 @@ import com.company.U1M6Summative.model.InvoiceItem;
 import com.company.U1M6Summative.model.Item;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,6 +17,9 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
 public class InvoiceDaoTest {
 
     @Autowired
@@ -32,9 +38,11 @@ public class InvoiceDaoTest {
     @Before
     public void setUp() throws Exception {
 
-        List<Customer> customerList = customerDao.getAllCustomers();
-        for(Customer customer : customerList){
-            customerDao.deleteCustomer(customer.getCustomerId());
+        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
+        for(InvoiceItem invoiceItem : invoiceItemList){
+            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
+//            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
+//            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceId());
         }
 
         List<Invoice> invoiceList = invoiceDao.getAllInvoices();
@@ -42,12 +50,12 @@ public class InvoiceDaoTest {
             invoiceDao.deleteInvoice(invoice.getInvoiceId());
         }
 
-        List<InvoiceItem> invoiceItemList = invoiceItemDao.getAllInvoiceItems();
-        for(InvoiceItem invoiceItem : invoiceItemList){
-            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
-//            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceItemId());
-//            invoiceItemDao.deleteInvoiceItem(invoiceItem.getInvoiceId());
+
+        List<Customer> customerList = customerDao.getAllCustomers();
+        for(Customer customer : customerList){
+            customerDao.deleteCustomer(customer.getCustomerId());
         }
+
 
         List<Item> itemList = itemDao.getAllItems();
         for(Item item : itemList){
@@ -80,7 +88,7 @@ public class InvoiceDaoTest {
         invoice.setOrderDate(LocalDate.of(2019,02,23));
         invoice.setPickupDate(LocalDate.of(2019,02,23));
         invoice.setReturnDate(LocalDate.of(2019,02,25));
-        invoice.setLateFee(new BigDecimal("1.0"));
+        invoice.setLateFee(new BigDecimal("1"));
 
         invoice = invoiceDao.addInvoice(invoice);
 
@@ -157,7 +165,7 @@ public class InvoiceDaoTest {
         invoice.setOrderDate(LocalDate.of(2019,02,23));
         invoice.setPickupDate(LocalDate.of(2019,02,23));
         invoice.setReturnDate(LocalDate.of(2019,02,25));
-        invoice.setLateFee(new BigDecimal("1.0"));
+        invoice.setLateFee(new BigDecimal("1"));
 
         invoice = invoiceDao.addInvoice(invoice);
 

@@ -36,7 +36,7 @@ public class InvoiceDaoJdbcTemplateImpl implements  InvoiceDao{
             "select * from invoice";
 
     private static final String UPDATE_INVOICE_SQL =
-            "update invoice set customer_id = ?, order_date = ?, pickup_date = ?, return_date = ?, late fee = ? where invoice_id = ?";
+            "update invoice set customer_id = ?, order_date = ?, pickup_date = ?, return_date = ?, late_fee = ? where invoice_id = ?";
 
     private static final String DELETE_INVOICE_SQL =
             "delete from invoice where invoice_id = ?";

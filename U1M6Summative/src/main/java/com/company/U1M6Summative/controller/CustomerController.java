@@ -1,6 +1,9 @@
 package com.company.U1M6Summative.controller;
 
 import com.company.U1M6Summative.model.Customer;
+import com.company.U1M6Summative.service.ServiceLayer;
+import com.company.U1M6Summative.viewmodel.CustomerViewModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,63 +11,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/customer")
 public class CustomerController {
 
-    private List<Customer> customerList = new ArrayList<Customer>();
+    @Autowired
+    ServiceLayer serviceLayer;
 
-    @RequestMapping(value = "/customer", method = RequestMethod.POST)
+    @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public Customer addCustomer(@RequestBody Customer customer){
+    public CustomerViewModel addCustomer(@RequestBody CustomerViewModel customerViewModel){
 
-       return customer;
+        return serviceLayer.saveCustomer(customerViewModel);
 
     }
 
-  /*  @RequestMapping(value = "/customer", method = RequestMethod.GET)
+    @GetMapping
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public List<CustomerViewModel> getCustomerList() {
+        List<CustomerViewModel> customerViewModels = serviceLayer.findAllCustomers();
+        return customerViewModels;
     }
 
-    @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
-    @ResponseStatus(HttpStatus.OK)
-    public Customer getCustomer(@PathVariable int id){
-
-        id = 1;
-        Customer customer = new Customer();
-        customer.setFirstName("Chitra");
-        customer.setLastName("Madhan");
-        customer.setEmail("cm@cm.com");
-        customer.setPhone("123-456-7890");
-        customer.setCompany("north");
-        customer.setCustomerId(id);
-
-        return customer;
-    }
-
-    @RequestMapping(value = "/customer/{id}", method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.OK)
-    public void deleteCustomer(@PathVariable int id){
-
-           for(Customer customer : customerList) {
-            if (customer.getCustomerId() == id) {
-
-                customerList.remove(customer);
-
-            }
-    }
-
-    }
-
-    @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public Customer getCustomerById(@PathVariable int id) {
+    public CustomerViewModel getCustomerById(@PathVariable int id) {
 
-        for(Customer customer : customerList) {
-            if (customer.getCustomerId() == id)
-                return customer;
+        List<CustomerViewModel> customerViewModelList = new ArrayList<CustomerViewModel>();
+
+        for(CustomerViewModel customerViewModel : customerViewModelList) {
+            if (customerViewModel.getCustomerId() == id)
+                return customerViewModel;
         }
 
         throw new IllegalArgumentException("customer not found.");
-    }*/
+    }
+
+    @PutMapping(value = "{/id}")
+    public CustomerViewModel updateCustomer(CustomerViewModel customerViewModel){
+        return serviceLayer.updateCustomer(customerViewModel);
+    }
 }

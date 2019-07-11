@@ -36,22 +36,54 @@ public class ServiceLayer {
     }
 
     //Customer API
+    @Transactional
     public CustomerViewModel saveCustomer(CustomerViewModel customerViewModel){
 
-        return null;
+        Customer customer = new Customer();
+        customer.setFirstName(customerViewModel.getFirstName());
+        customer.setLastName(customerViewModel.getLastName());
+        customer.setEmail(customerViewModel.getEmail());
+        customer.setCompany(customerViewModel.getCompany());
+        customer.setPhone(customerViewModel.getPhone());
+
+        customer=customerDao.addCustomer(customer);
+        customerViewModel.setCustomerId(customer.getCustomerId());
+
+        return customerViewModel;
     }
 
     public CustomerViewModel findCustomer(int id){
-        return null;
+        Customer customer = customerDao.getCustomerById(id);
+
+        return buildCustomerViewModel(customer);
     }
 
     public List<CustomerViewModel> findAllCustomers(){
-        return null;
+
+        List<Customer> customerList = customerDao.getAllCustomers();
+
+        List<CustomerViewModel> customerViewModels = new ArrayList<CustomerViewModel>();
+
+        for(Customer customer: customerList){
+            CustomerViewModel customerViewModel = buildCustomerViewModel(customer);
+            customerViewModels.add(customerViewModel);
+        }
+            return customerViewModels;
     }
 
     @Transactional
     public CustomerViewModel updateCustomer(CustomerViewModel customerViewModel){
-        return null;
+
+        Customer customer = new Customer();
+        customer.setCustomerId(customerViewModel.getCustomerId());
+        customer.setFirstName(customerViewModel.getFirstName());
+        customer.setLastName(customerViewModel.getLastName());
+        customer.setEmail(customerViewModel.getEmail());
+        customer.setCompany(customerViewModel.getCompany());
+        customer.setPhone(customerViewModel.getPhone());
+
+        customerDao.updateCustomer(customer);
+        return buildCustomerViewModel(customer);
     }
 
     public void removeCustomer(int id){
@@ -213,7 +245,17 @@ public class ServiceLayer {
     //Helper method
     private CustomerViewModel buildCustomerViewModel(Customer customer){
 
-        return null;
+        customer = customerDao.addCustomer(customer);
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+        customerViewModel.setCustomerId(customer.getCustomerId());
+        customerViewModel.setFirstName(customer.getFirstName());
+        customerViewModel.setLastName(customer.getLastName());
+        customerViewModel.setEmail(customer.getEmail());
+        customerViewModel.setCompany(customer.getCompany());
+        customerViewModel.setPhone(customer.getPhone());
+
+        return customerViewModel;
     }
 
     private InvoiceViewModel buildInvoiceViewModel(Invoice invoice){

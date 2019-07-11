@@ -326,6 +326,8 @@ public class ServiceLayerTest {
         ivm.setReturnDate(LocalDate.of(2019,02,26));
         ivm.setLateFee(new BigDecimal("2.20"));
 
+        ivm = serviceLayer.saveInvoice(ivm);
+
 
         List<InvoiceViewModel> customerInvoices = serviceLayer.findAllInvoicesByCustomer(customer1.getCustomerId());
 
@@ -485,6 +487,7 @@ public class ServiceLayerTest {
         invoice2.setPickupDate(LocalDate.of(2012,2,25));
         invoice2.setReturnDate(LocalDate.of(2012,2,26));
         invoice2.setLateFee(new BigDecimal("2.20"));
+
 
         Customer customer = new Customer();
         customer.setCustomerId(1);

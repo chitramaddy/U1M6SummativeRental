@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/invoice")
 public class InvoiceController {
 
-/*
+
     @Autowired
     ServiceLayer serviceLayer;
 
@@ -21,44 +21,42 @@ public class InvoiceController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public InvoiceViewModel addInvoice(InvoiceViewModel viewModel){
-        return viewModel;
-    }
+        return serviceLayer.saveInvoice(viewModel);
 
+    }
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public InvoiceViewModel getInvoice(@PathVariable("invoiceId") int invoiceId){
-        return null;
+        return serviceLayer.findInvoice(invoiceId);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Invoice> getAllInvoices(){
-        return null;
+    public List<InvoiceViewModel> getAllInvoices(){
+        return serviceLayer.findAllInvoice();
     }
 
     @GetMapping("customer/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Invoice> getAllInvoicesByCustomer(@PathVariable("customerId") int customerId){
-        return null;
+    public List<InvoiceViewModel> getAllInvoicesByCustomer(@PathVariable("customerId") int customerId){
+        return serviceLayer.findAllInvoicesByCustomer(customerId);
     }
-
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public void updateInvoice(@RequestBody Invoice invoice){
-
+    public InvoiceViewModel updateInvoice(@RequestBody InvoiceViewModel invoice){
+        return serviceLayer.updateInvoice(invoice);
     }
 
 
     @DeleteMapping({"id"})
     @ResponseStatus(HttpStatus.OK)
     public void deleteInvoice(@PathVariable("invoiceId") int invoiceId){
-
+        serviceLayer.removeInvoice(invoiceId);
     }
 
 
-*/
 
 
 

@@ -16,6 +16,7 @@ public interface InvoiceItemDao {
 
     void deleteInvoiceItem(int id);
 
+    List<InvoiceItem> getAllInvoiceItemsByInvoice(int invoiceId);
 
 
 }

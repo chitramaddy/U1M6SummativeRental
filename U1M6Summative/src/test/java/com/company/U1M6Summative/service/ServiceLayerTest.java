@@ -465,7 +465,7 @@ public class ServiceLayerTest {
 
         doReturn(customer).when(customerDao).addCustomer(customer2);
         doReturn(customer).when(customerDao).getCustomerById(1);
-        doReturn(customer).when(customerDao).getAllCustomers();
+        doReturn(customerList).when(customerDao).getAllCustomers();
     }
 
     private void setUpInvoiceDaoMock(){
@@ -561,7 +561,7 @@ public class ServiceLayerTest {
 
         doReturn(invoiceViewModelList).when(invoiceDao).findInvoiceByCustomer(1);
 
-        doReturn(null).when(invoiceDao).deleteInvoice(invoice.getInvoiceId());
+       doReturn(null).when(invoiceDao).deleteInvoice(invoice.getInvoiceId());
 
 
     }

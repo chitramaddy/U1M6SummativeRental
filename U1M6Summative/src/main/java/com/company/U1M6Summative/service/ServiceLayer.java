@@ -245,7 +245,17 @@ public class ServiceLayer {
     //Helper method
     private CustomerViewModel buildCustomerViewModel(Customer customer){
 
-        return null;
+        customer = customerDao.addCustomer(customer);
+
+        CustomerViewModel customerViewModel = new CustomerViewModel();
+        customerViewModel.setCustomerId(customer.getCustomerId());
+        customerViewModel.setFirstName(customer.getFirstName());
+        customerViewModel.setLastName(customer.getLastName());
+        customerViewModel.setEmail(customer.getEmail());
+        customerViewModel.setCompany(customer.getCompany());
+        customerViewModel.setPhone(customer.getPhone());
+
+        return customerViewModel;
     }
 
     private InvoiceViewModel buildInvoiceViewModel(Invoice invoice){

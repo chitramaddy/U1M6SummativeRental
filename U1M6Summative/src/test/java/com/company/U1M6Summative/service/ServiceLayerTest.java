@@ -304,6 +304,35 @@ public class ServiceLayerTest {
     }
 
     @Test
+    public void findAllInvoicesByCustomer() {
+
+        CustomerViewModel customer = new CustomerViewModel();
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+        customer = serviceLayer.saveCustomer(customer);
+
+        Customer customer1 = customerViewModelToCustomer(customer);
+
+        List<InvoiceViewModel> invoiceList = new ArrayList<>();
+
+        InvoiceViewModel ivm = new InvoiceViewModel();
+
+        ivm.setCustomer(customer1);
+        ivm.setOrderDate(LocalDate.of(2019,02,24));
+        ivm.setPickupDate(LocalDate.of(2019,02,25));
+        ivm.setReturnDate(LocalDate.of(2019,02,26));
+        ivm.setLateFee(new BigDecimal("2.20"));
+
+
+        List<InvoiceViewModel> customerInvoices = serviceLayer.findAllInvoicesByCustomer(customer1.getCustomerId());
+
+        assertEquals(customerInvoices.size(),1);
+    }
+
+    @Test
     public void updateInvoice(){
 
         InvoiceViewModel ivm = new InvoiceViewModel();
@@ -457,6 +486,28 @@ public class ServiceLayerTest {
         invoice2.setReturnDate(LocalDate.of(2012,2,26));
         invoice2.setLateFee(new BigDecimal("2.20"));
 
+        Customer customer = new Customer();
+        customer.setCustomerId(1);
+        customer.setFirstName("Chitra");
+        customer.setLastName("Madhan");
+        customer.setEmail("cm@cm.com");
+        customer.setCompany("The Awesome Comapany");
+        customer.setPhone("123-456-7890");
+
+        InvoiceViewModel invoiceViewModel = new InvoiceViewModel();
+        invoiceViewModel.setInvoiceId(20);
+        invoiceViewModel.setCustomer(customer);
+        invoiceViewModel.setOrderDate(LocalDate.of(2012,2,24));
+        invoiceViewModel.setPickupDate(LocalDate.of(2012,2,25));
+        invoiceViewModel.setReturnDate(LocalDate.of(2012,2,26));
+        invoiceViewModel.setLateFee(new BigDecimal("2.20"));
+
+        List<InvoiceViewModel> invoiceViewModelList = new ArrayList<>();
+
+        invoiceViewModelList.add(invoiceViewModel);
+
+
+
         //-----------------------------------------------------------------------
 
         Invoice invoiceUpdate = new Invoice();
@@ -504,6 +555,8 @@ public class ServiceLayerTest {
         doReturn(invoiceAfterAdd).when(invoiceDao).addInvoice(invoiceBeforeUpdate);
         doReturn(invoiceUpdate).when(invoiceDao).getInvoice(invoiceWithUpdate.getInvoiceId());
         doReturn(invoiceUpdate).when(invoiceDao).updateInvoice(invoiceWithUpdate);
+
+        doReturn(invoiceViewModelList).when(invoiceDao).findInvoiceByCustomer(1);
 
         doReturn(null).when(invoiceDao).deleteInvoice(invoice.getInvoiceId());
 

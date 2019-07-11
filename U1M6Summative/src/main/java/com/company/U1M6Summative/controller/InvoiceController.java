@@ -25,7 +25,6 @@ public class InvoiceController {
 
     }
 
-
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public InvoiceViewModel getInvoice(@PathVariable("invoiceId") int invoiceId){
@@ -44,22 +43,17 @@ public class InvoiceController {
         return serviceLayer.findAllInvoicesByCustomer(customerId);
     }
 
-
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public InvoiceViewModel updateInvoice(@RequestBody InvoiceViewModel invoice){
-
         return serviceLayer.updateInvoice(invoice);
-
     }
 
 
     @DeleteMapping({"id"})
     @ResponseStatus(HttpStatus.OK)
     public void deleteInvoice(@PathVariable("invoiceId") int invoiceId){
-
         serviceLayer.removeInvoice(invoiceId);
-
     }
 
 
